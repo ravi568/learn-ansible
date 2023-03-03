@@ -17,3 +17,12 @@
     - name: print play variable from FILE
       ansible.builtin.debug:
         msg: URL = {{ URL }}
+
+- name: task variables
+  hosts: localhost
+  tasks:
+    - name: Task level variable
+      vars: # these are only for this task, next task on same play cannot access it.
+        URL: play.example.com
+      ansible.builtin.debug:
+        msg: URL = {{ URL }}
