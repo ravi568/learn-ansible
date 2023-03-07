@@ -12,7 +12,7 @@
   hosts: localhost
   # var files only works on play level
   vars_files:
-    - main.yml
+    - user.service
   tasks:
     - name: print play variable from FILE
       ansible.builtin.debug:
